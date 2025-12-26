@@ -1,0 +1,18 @@
+[Unit]
+Description=Vector
+Documentation=https://vector.dev
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+User={{ vector_user }}
+Group={{ vector_group }}
+ExecStart={{ vector_binary_path }} --config {{ vector_config_dir }}
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+EnvironmentFile=-/etc/default/vector
+
+[Install]
+WantedBy=multi-user.target

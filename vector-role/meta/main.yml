@@ -1,0 +1,21 @@
+galaxy_info:
+  author: VTB55
+  description: Vector role for Netology
+  company: "Netology"
+  license: "MIT"
+  min_ansible_version: "2.9"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
+        - jammy
+    - name: EL
+      versions:
+        - 7
+        - 8
+        - 9
+  galaxy_tags:
+    - logging
+    - monitoring
+    - vector

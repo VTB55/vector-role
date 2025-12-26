@@ -1,0 +1,19 @@
+# defaults/main.yml
+---
+# Версия Vector для установки
+vector_version: "0.36.0"
+
+# Пользователь и группа для Vector
+vector_user: "vector"
+vector_group: "vector"
+
+# Директории
+vector_config_dir: "/etc/vector"
+vector_data_dir: "/var/lib/vector"
+vector_log_dir: "/var/log/vector"
+
+# Архитектура системы (автоматически определится)
+vector_arch: "x86_64-unknown-linux-gnu"
+
+# Базовый URL для скачивания
+vector_download_base_url: "https://packages.timber.io/vector"

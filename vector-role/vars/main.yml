@@ -1,0 +1,6 @@
+# vars/main.yml
+---
+vector_archive_name: "vector-{{ vector_version }}-{{ vector_arch }}.tar.gz"
+vector_download_url: "{{ vector_download_base_url }}/{{ vector_version }}/{{ vector_archive_name }}"
+vector_binary_path: "/usr/local/bin/vector"
+vector_unit_file: "vector.service"

@@ -1,0 +1,7 @@
+# handlers/main.yml
+---
+- name: restart vector
+  systemd:
+    name: vector
+    state: restarted
+    daemon_reload: yes
