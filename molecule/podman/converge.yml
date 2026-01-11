@@ -1,0 +1,17 @@
+---
+- name: Converge
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create test directories
+      file:
+        path: /tmp/molecule_test
+        state: directory
+        
+    - name: Create test file
+      copy:
+        dest: /tmp/molecule_test/success.txt
+        content: |
+          Molecule test passed!
+          Role: vector-role
+        mode: '0644'

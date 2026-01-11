@@ -1,0 +1,9 @@
+---
+exclude_paths:
+  - molecule/
+  - .tox/
+parseable: true
+quiet: true
+skip_list:
+  - schema
+  - no-changed-when

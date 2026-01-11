@@ -1,0 +1,9 @@
+---
+exclude_paths:
+  - molecule/
+  - .tox/
+verbosity: 1
+skip_list:
+  - role-name
+  - schema
+parseable: true

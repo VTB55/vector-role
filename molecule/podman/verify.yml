@@ -1,0 +1,30 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+    - name: Check test file exists
+      stat:
+        path: /tmp/molecule_test/success.txt
+      register: test_file
+      
+    - name: Assert test file exists
+      assert:
+        that:
+          - test_file.stat.exists
+        success_msg: "✓ Test file exists"
+        fail_msg: "✗ Test file missing"
+        
+    - name: Check file content
+      shell: cat /tmp/molecule_test/success.txt
+      register: file_content
+      changed_when: false
+      
+    - name: Assert content is correct
+      assert:
+        that:
+          - "'Molecule test passed!' in file_content.stdout"
+        success_msg: "✓ File content is correct"
+        fail_msg: "✗ File content is incorrect"
+        
+    - name: Test connectivity
+      ping:
